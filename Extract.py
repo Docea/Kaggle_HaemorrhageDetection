@@ -47,10 +47,10 @@ df.to_csv(revisedtrainCSVpath, index=False)
 
     
 print('Processing Train Set')
-def resize_112(path, _): resize(path, '/media/docear/My Passport/Kaggle/Hemorrhage/data/112/train', 112) # set the destination file address to a new folder that will accept the processed training set
-parallel(resize_112, list(paths.iterdir()), max_workers=12)
+#def resize_112(path, _): resize(path, '/media/docear/My Passport/Kaggle/Hemorrhage/data/112/train', 112) # set the destination file address to a new folder that will accept the processed training set
+def resize_112(path, _): resize(path, '/home/docear/trainDataKaggle', 112) # set the destination file address to a new folder that will accept the processed training set
+parallel(resize_112, list(paths.iterdir())[674257:], max_workers=12)
 
 print('Processing Test Set')
 def resize_112_test(path, _): resize(path, '/media/docear/My Passport/Kaggle/Hemorrhage/data/112/test', 112) # set the destination file address to a new folder that will accept the processed test set
 parallel(resize_112_test, list(pathsTest.iterdir()), max_workers=12)
-
